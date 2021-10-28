@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>柚子小屋</title>
   
-  
+  <subtitle>求知若饥，虚心若愚</subtitle>
   <link href="https://youzi530.github.io/atom.xml" rel="self"/>
   
   <link href="https://youzi530.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://youzi530.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>凌柚</name>
     
   </author>
   
