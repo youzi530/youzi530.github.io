@@ -6,7 +6,7 @@
   <link href="https://youzi530.github.io/atom.xml" rel="self"/>
   
   <link href="https://youzi530.github.io/"/>
-  <updated>2021-11-04T09:11:23.699Z</updated>
+  <updated>2021-11-04T09:32:58.690Z</updated>
   <id>https://youzi530.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://youzi530.github.io/2021/11/04/bu-long-guo-lu-qi/"/>
     <id>https://youzi530.github.io/2021/11/04/bu-long-guo-lu-qi/</id>
     <published>2021-11-04T09:00:20.000Z</published>
-    <updated>2021-11-04T09:11:23.699Z</updated>
+    <updated>2021-11-04T09:32:58.690Z</updated>
     
     
       
@@ -34,6 +34,12 @@
     
     
     
+    
+    <category term="redis" scheme="https://youzi530.github.io/tags/redis/"/>
+    
+    <category term="布隆过滤器" scheme="https://youzi530.github.io/tags/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
+    
+    <category term="数据库优化" scheme="https://youzi530.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -42,7 +48,7 @@
     <link href="https://youzi530.github.io/2021/11/04/miao-sha-xi-tong-she-ji/"/>
     <id>https://youzi530.github.io/2021/11/04/miao-sha-xi-tong-she-ji/</id>
     <published>2021-11-04T08:28:55.000Z</published>
-    <updated>2021-11-04T08:56:54.021Z</updated>
+    <updated>2021-11-04T09:30:57.019Z</updated>
     
     
       
@@ -55,6 +61,12 @@
     
     
     
+    
+    <category term="redis" scheme="https://youzi530.github.io/tags/redis/"/>
+    
+    <category term="系统设计" scheme="https://youzi530.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="秒杀" scheme="https://youzi530.github.io/tags/%E7%A7%92%E6%9D%80/"/>
     
   </entry>
   
