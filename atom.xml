@@ -6,7 +6,7 @@
   <link href="https://youzi530.github.io/atom.xml" rel="self"/>
   
   <link href="https://youzi530.github.io/"/>
-  <updated>2021-11-04T08:08:00.445Z</updated>
+  <updated>2021-11-04T08:56:54.021Z</updated>
   <id>https://youzi530.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>秒杀系统设计</title>
+    <link href="https://youzi530.github.io/2021/11/04/miao-sha-xi-tong-she-ji/"/>
+    <id>https://youzi530.github.io/2021/11/04/miao-sha-xi-tong-she-ji/</id>
+    <published>2021-11-04T08:28:55.000Z</published>
+    <updated>2021-11-04T08:56:54.021Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>布隆过滤器(BloomFilter)</title>
     <link href="https://youzi530.github.io/2021/10/29/bu-long-guo-lu-qi-bloomfilter/"/>
     <id>https://youzi530.github.io/2021/10/29/bu-long-guo-lu-qi-bloomfilter/</id>
     <published>2021-10-29T02:06:51.000Z</published>
-    <updated>2021-11-04T08:08:00.445Z</updated>
+    <updated>2021-11-04T08:09:30.330Z</updated>
     
     
       

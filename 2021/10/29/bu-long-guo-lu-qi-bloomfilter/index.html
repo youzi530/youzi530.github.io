@@ -601,6 +601,7 @@ Bloom Filter 概念布隆过滤器（英语：Bloom Filter）是1970年由一个
 <p>Bloom Filter跟单哈希函数Bit-Map不同之处在于：Bloom Filter使用了k个哈希函数，每个字符串跟k个bit对应。从而降低了冲突的概率。<br><img src="https://images2018.cnblogs.com/blog/740591/201806/740591-20180623183045586-692673875.jpg" alt="img"></p>
 <p><img src="./images/img.png" alt="img"></p>
 <p><img src="../images/img.png" alt="img"></p>
+<p><img src="/2021/10/29/bu-long-guo-lu-qi-bloomfilter/img.png" alt="img"></p>
 <p>简单的说一下就是我们先把我们数据库的数据都加载到我们的过滤器中，比如数据库的id现在有：1、2、3</p>
 <p>那就用id：1 为例子他在上图中经过三次hash之后，把三次原本值0的地方改为1</p>
 <p>下次我进来查询如果id也是1 那我就把1拿去三次hash 发现跟上面的三个位置完全一样，那就能证明过滤器中有1的</p>
@@ -975,18 +976,17 @@ Bloom Filter 概念布隆过滤器（英语：Bloom Filter）是1970年由一个
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/29/bu-long-guo-lu-qi-bloomfilter/">
+                <a href="/2021/11/04/miao-sha-xi-tong-she-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="布隆过滤器(BloomFilter)">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="秒杀系统设计">
                         
-                        <span class="card-title">布隆过滤器(BloomFilter)</span>
+                        <span class="card-title">秒杀系统设计</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -996,9 +996,9 @@ Bloom Filter 概念布隆过滤器（英语：Bloom Filter）是1970年由一个
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1007,7 +1007,6 @@ Bloom Filter 概念布隆过滤器（英语：Bloom Filter）是1970年由一个
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1283,7 +1282,7 @@ Bloom Filter 概念布隆过滤器（英语：Bloom Filter）是1970年由一个
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.2k</span>
+                        class="white-color">7.4k</span>
             
             
             

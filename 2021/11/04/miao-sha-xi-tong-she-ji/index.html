@@ -4,8 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="记录生活, 柚子小屋">
-    <meta name="description" content="记录生活 | 柚子小屋">
+    <meta name="keywords" content="秒杀系统设计, 柚子小屋">
+    <meta name="description" content="
+你知道的越多，你不知道的越多
+
+
+点赞再看，养成习惯
+
+前言Redis在互联网技术存储方面使用如此广泛，几乎所有的后端技术面试官都要在Redis的使用和原理方面对小伙伴们进行360°的刁难。
+作为一个在互联网公司面一次拿一次Offer的面">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +24,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>记录生活 | 柚子小屋</title>
+    <title>秒杀系统设计 | 柚子小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -419,12 +426,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">记录生活</h1>
+                    <h1 class="description center-align post-title">秒杀系统设计</h1>
                 </div>
             </div>
         </div>
@@ -552,28 +559,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-30
+                    2021-11-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-29
+                    2021-11-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    5.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    17 分
                 </div>
                 
 
@@ -593,13 +600,124 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=201033992&amp;bvid=BV1dz411i75o&amp;cid=203132924&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div>
+                <blockquote>
+<p>你知道的越多，你不知道的越多</p>
+</blockquote>
+<blockquote>
+<p>点赞再看，养成习惯</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>Redis</strong>在互联网技术存储方面使用如此广泛，几乎所有的后端技术面试官都要在<strong>Redis</strong>的使用和原理方面对小伙伴们进行360°的刁难。</p>
+<p>作为一个在互联网公司面一次拿一次Offer的面霸，打败了无数竞争对手，每次都只能看到无数落寞的身影失望的离开，略感愧疚（<strong>请允许我使用一下夸张的修辞手法</strong>）。</p>
+<p>于是在一个寂寞难耐的夜晚，我痛定思痛，决定开始写<strong>《吊打面试官》</strong>系列，希望能帮助各位读者以后面试势如破竹，对面试官进行360°的反击，吊打问你的面试官，让一同面试的同僚瞠目结舌，疯狂收割大厂Offer！</p>
+<h2 id="絮叨"><a href="#絮叨" class="headerlink" title="絮叨"></a>絮叨</h2><p>之前写了很多<strong>Redis</strong>相关的知识点，我又大概回头看了下，除了比较底层的东西没写很深之外，我基本上的点都提到过了，我相信如果只是为了应付面试应该是够了的，但是如果你想把它们真正的吸收纳为己用，还是需要<strong>大量的知识积累</strong>，和<strong>很多实际操作</strong>的。</p>
+<p>就我自己而言<strong>Redis</strong>在开发过程中实在用得太普遍了，热点数据的存储啊，整体性能的提升啊都会用到，但是就像我说的<strong>技术就是一把双刃剑</strong>，使用它们随之而来的问题也会很多的，我在老东家双十二就遇到<strong>缓存雪崩</strong>问题让整体服务宕机3分钟，相必大家都知道阿里今年的双十一数据了，那三分钟在这种时候到底值多少钱？真的不敢想象。</p>
+<p><strong>Redis</strong>的普遍我就拿掘金我自己的认知举例，不知道对不对，但是目测是对的。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g92g1h1g46j30dw0f1dix.jpg"></p>
+<p><strong>大家看到问题所在了么？</strong>是的热门的赞的数据不是最新的，我盲猜一波上面的热门文章是缓存。失效时间应该是几十分钟的，为啥这么做呢？</p>
+<p>热门文章是大家共同都会看到的，也就是<strong>热点数据</strong>，在那做缓存，他是不需要那么高的<strong>实时性</strong>的，那下面的文章列表是最新发布的文章，有高实时性的特点，大家访问多的放在缓存还可以给DB减少压力，我也不知道掘金是不是这么做的哈，反正道理是这么个道理了。</p>
+<p>那什么场景是使用<strong>Redis比较复杂的场景</strong>，而且需要<strong>大量中间件</strong>和<strong>业务逻辑</strong>去配合的呢？</p>
+<p><strong>秒杀</strong>！是的就是今天的主题秒杀，我就用我自己的思路带大家一起看一下，设计一个秒杀从前到后，从内到外到底要技术人员做多少准备。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先设计一个系统之前，我们需要先确认我们的业务场景是怎么样子的，我就<strong>带着大家一起假设一个场景</strong>好吧。</p>
+<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>我们现场要卖100件下面这个<strong>婴儿纸尿裤</strong>，然后我们根据以往这样秒杀活动的数据经验来看，目测来抢这100件纸尿裤的人足足有10万人。（南极人打钱！）</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g92ddsedbrj308z0jg759.jpg"></p>
+<p>你一听，完了呀，这我们的服务器哪里顶得住啊！说真的直接打DB肯定挂。但是别急嘛，有<strong>暖男</strong>敖丙在，我们在开始之前应该先思考下<strong>会出现哪些问题</strong>？</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h4 id="高并发："><a href="#高并发：" class="headerlink" title="高并发："></a>高并发：</h4><p>是的<strong>高并发</strong>这个是我们想都不用想的一个点，一瞬间这么多人进来这不是高并发什么时候是呢？</p>
+<p>是吧，秒杀的特点就是这样<strong>时间极短</strong>、 <strong>瞬间用户量大</strong>。</p>
+<p>正常的店铺营销都是用极低的价格配合上短信、APP的精准推送，吸引特别多的用户来参与这场秒杀，<strong>爽了商家苦了开发呀</strong>。</p>
+<p>秒杀大家都知道如果真的营销到位，价格诱人，几十万的流量我觉得完全不是问题，那单机的<strong>Redis</strong>我感觉3-4W的QPS还是能顶得住的，但是再高了就没办法了，那这个数据随便搞个热销商品的秒杀可能都不止了。</p>
+<p>大量的请求进来，我们需要考虑的点就很多了，<strong>缓存雪崩</strong>，<strong>缓存击穿</strong>，<strong>缓存穿透</strong>这些我之前提到的点都是有可能发生的，出现问题打挂DB那就很难受了，活动失败用户体验差，活动人气没了，最后背锅的还是<strong>开发</strong>。</p>
+<img src="https://i03piccdn.sogoucdn.com/1b08c444adee6b56" alt="" style="zoom:50%;">
 
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=201033992&amp;bvid=BV1dz411i75o&amp;cid=203132924&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div>
+<h4 id="超卖："><a href="#超卖：" class="headerlink" title="超卖："></a>超卖：</h4><p>但凡是个秒杀，都怕<strong>超卖</strong>，我这里举例的只是尿不湿，要是换成100个华为MatePro30，商家的预算经费卖100个可以赚点还可以造势，结果你写错程序多卖出去200个，你不发货用户<strong>投诉你</strong>，平台<strong>封你店</strong>，你发货就<strong>血亏</strong>，你怎么办？<br>（没事看了敖丙的文章直接不怕）</p>
+<p>那最后只能<strong>杀个开发祭天</strong>解气了，秒杀的价格本来就低了，基本上都是不怎么赚钱的，超卖了就恐怖了呀，所以超卖也是很关键的一个点。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g90qmwe0jaj308y0b2jyk.jpg"></p>
+<h4 id="恶意请求："><a href="#恶意请求：" class="headerlink" title="恶意请求："></a>恶意请求：</h4><p>你这么低的价格，假如我抢到了，我转手卖掉我不是<strong>血赚</strong>？就算我不卖我也不亏啊，那用户知道，你知道，别的别有用心的人（黑客、黄牛…）肯定也知道的。</p>
+<p>那简单啊，我知道你什么时候抢，我搞个几十台机器搞点脚本，我也模拟出来十几万个人左右的请求，那我是不是意味着我基本上有80%的成功率了。</p>
+<p>真实情况可能远远不止，因为机器请求的速度比人的手速往往快太多了，在贵州的敖丙我每年回家抢高铁票都是<strong>秒光</strong>的，我也不知道有没有黄牛的功劳，我要Diss你，黄牛。杰伦演唱会门票抢不到，我也Diss你。</p>
+<p>Tip：科普下，小道消息了解到的，黄牛的抢票系统，比国内很多小公司的系统还吊很多，架构设计都是顶级的，我用<strong>顶配的服务</strong>加上<strong>顶配的架构设计</strong>，你还想看演唱会？还想回家？</p>
+<p>不过不用黄牛我回家都难，我们云贵川跟我一样要回家过年的仔太多了555！</p>
+<h4 id="链接暴露："><a href="#链接暴露：" class="headerlink" title="链接暴露："></a>链接暴露：</h4><p>前面几个问题大家可能都很好理解，一看到这个有的小伙伴可能会比较疑惑，啥是<strong>链接暴露</strong>呀？</p>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8xey1a2i1j31f20q6qgk.jpg" alt="" style="zoom:33%;">
 
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=201033992&amp;bvid=BV1dz411i75o&amp;cid=203132924&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div>
+<p>相信是个开发同学都对这个画面一点都不陌生吧，懂点行的仔都可以打开谷歌的<strong>开发者模式</strong>，然后看看你的网页代码，有的就有URL，但是我写VUE的时候是事件触发然后去调用文件里面的接口看源码看不到，但是我可以点击一下<strong>查看你的请求地址</strong>啊，不过你好像可以对按钮在秒杀前置灰。</p>
+<p>不管怎么样子都有危险，撇开外面的所有的东西你都挡住了，你卖这个东西实在便宜得过分，有诱惑力，你能保证<strong>开发不动心</strong>？开发知道地址，在秒杀的时候自己提前请求。。。（开发：怎么TM又是我）</p>
+<p><img src="https://tvax4.sinaimg.cn/large/006Xzox4gy1g7wdbt5o06j308505h745.jpg"></p>
+<h4 id="数据库："><a href="#数据库：" class="headerlink" title="数据库："></a>数据库：</h4><p>每秒上万甚至十几万的<strong>QPS</strong>（每秒请求数）直接打到<strong>数据库</strong>，基本上都要把库打挂掉，而且你服务不单单是做秒杀的还涉及其他的业务，你没做<strong>降级、限流、熔断</strong>啥的，别的一起挂，小公司的话可能<strong>全站崩溃404</strong>。</p>
+<p>反正不管你秒杀怎么挂，你别把别的搞挂了对吧，搞挂了就不是杀一个程序员能搞定的。</p>
+<p>程序员：我TM好难啊！</p>
+<h3 id="问题都列出来了，那怎么设计，怎么解决这些问题就是接下去要考虑的了，我们对症下药。"><a href="#问题都列出来了，那怎么设计，怎么解决这些问题就是接下去要考虑的了，我们对症下药。" class="headerlink" title="问题都列出来了，那怎么设计，怎么解决这些问题就是接下去要考虑的了，我们对症下药。"></a>问题都列出来了，那怎么设计，怎么解决这些问题就是接下去要考虑的了，我们对症下药。</h3><h4 id="服务单一职责："><a href="#服务单一职责：" class="headerlink" title="服务单一职责："></a>服务单一职责：</h4><p>设计个能抗住高并发的系统，我觉得还是得<strong>单一职责</strong>。</p>
+<p>什么意思呢，大家都知道现在设计都是<strong>微服务的设计思想</strong>，然后再用<strong>分布式的部署方式</strong></p>
+<p>也就是我们下单是有个订单服务，用户登录管理等有个用户服务等等，那为啥我们不给秒杀也开个服务，我们把秒杀的代码业务逻辑放一起。</p>
+<p>单独给他建立一个数据库，现在的互联网架构部署都是<strong>分库</strong>的，一样的就是订单服务对应订单库，秒杀我们也给他建立自己的秒杀库。</p>
+<p>至于表就看大家怎么设计了，该设置索引的地方还是要设置索引的，建完后记得用<strong>explain</strong>看看<strong>SQL</strong>的执行计划。（不了解的小伙伴也没事，MySQL章节我会说的）</p>
+<p>单一职责的好处就是就算秒杀没抗住，秒杀库崩了，服务挂了，也不会影响到其他的服务。（强行高可用）</p>
+<h4 id="秒杀链接加盐："><a href="#秒杀链接加盐：" class="headerlink" title="秒杀链接加盐："></a>秒杀链接加盐：</h4><p>我们上面说了链接要是提前暴露出去可能有人直接访问url就提前秒杀了，那又有小伙伴要说了我做个时间的校验就好了呀，那我告诉你，知道链接的地址比起页面人工点击的还是有<strong>很大优势</strong>。</p>
+<p>我知道url了，那我通过程序不断获取最新的北京时间，可以达到<strong>毫秒级别</strong>的，我就在00毫秒的时候请求，我敢说绝对比你人工点的成功率大太多了，而且我可以一毫秒发送N次请求，搞不好你卖100个产品我全拿了。</p>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8p9gc6e9pj30go0b4js2.jpg" alt="" style="zoom:50%;">
 
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=201033992&amp;bvid=BV1dz411i75o&amp;cid=203132924&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div>
+<p><strong>那这种情况怎么避免？</strong></p>
+<p>简单，把<strong>URL动态化</strong>，就连写代码的人都不知道，你就通过MD5之类的加密算法加密随机的字符串去做url，然后通过前端代码获取url后台校验才能通过。</p>
+<p>暖男我呢，又准备了一个简单的url加密给大家尝尝鲜，还不<strong>点个赞</strong>？</p>
+<img src="https://user-gold-cdn.xitu.io/2019/11/15/16e6edd38bc5a2e6?w=698&amp;h=799&amp;f=png&amp;s=124430" alt="" style="zoom:100%;">
+
+<h4 id="Redis集群："><a href="#Redis集群：" class="headerlink" title="Redis集群："></a>Redis集群：</h4><p>之前不是说单机的<strong>Redis</strong>顶不住嘛，那简单多找几个兄弟啊，秒杀本来就是读多写少，那你们是不是瞬间想起来我之前跟你们提到过的，<strong>Redis集群</strong>，<strong>主从同步</strong>、<strong>读写分离</strong>，我们还搞点<strong>哨兵</strong>，开启<strong>持久化</strong>直接无敌高可用！</p>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8p9gedwerj312y0hodhm.jpg" alt="" style="zoom:80%;">
+
+<h4 id="Nginx："><a href="#Nginx：" class="headerlink" title="Nginx："></a>Nginx：</h4><p><strong>Nginx</strong>大家想必都不陌生了吧，这玩意是<strong>高性能的web服务器</strong>，并发也随便顶几万不是梦，但是我们的<strong>Tomcat</strong>只能顶几百的并发呀，那简单呀<strong>负载均衡</strong>嘛，一台服务几百，那就多搞点，在秒杀的时候多租点<strong>流量机</strong>。</p>
+<p>Tip：据我所知国内某大厂就是在去年春节活动期间租光了亚洲所有的服务器，小公司也很喜欢在双十一期间买流量机来顶住压力。</p>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8yylq6f3mj30vs0hyq41.jpg" alt="" style="zoom:50%;">
+
+<p><strong>这样一对比是不是觉得你的集群能顶很多了。</strong></p>
+<p><strong>恶意请求拦截</strong>也需要用到它，一般单个用户请求次数太夸张，不像人为的请求在网关那一层就得拦截掉了，不然请求多了他抢不抢得到是一回事，服务器压力上去了，可能占用网络带宽或者把<strong>服务器打崩、缓存击穿</strong>等等。</p>
+<h4 id="资源静态化："><a href="#资源静态化：" class="headerlink" title="资源静态化："></a>资源静态化：</h4><p>秒杀一般都是特定的商品还有页面模板，现在一般都是前后端分离的，所以页面一般都是不会经过后端的，但是前端也要自己的服务器啊，那就把能提前放入<strong>cdn服务器</strong>的东西都放进去，反正把所有能提升效率的步骤都做一下，减少真正秒杀时候服务器的压力。</p>
+<h4 id="按钮控制："><a href="#按钮控制：" class="headerlink" title="按钮控制："></a>按钮控制：</h4><p>大家有没有发现没到秒杀前，一般按钮都是<strong>置灰</strong>的，只有时间到了，才能点击。</p>
+<p>这是因为怕大家在时间快到的最后几秒秒疯狂请求服务器，然后还没到秒杀的时候基本上服务器就挂了。</p>
+<p>这个时候就需要前端的配合，定时去请求你的后端服务器，获取最新的北京时间，到时间点再给按钮可用状态。</p>
+<p>按钮可以点击之后也得给他置灰几秒，不然他一样在开始之后一直点的。<strong>你敢说你们秒杀的时候不是这样的？</strong></p>
+<img src="http://n.sinaimg.cn/sinacn11/0/w400h400/20180729/def2-hfxsxzh3601415.jpg" alt="" style="zoom:33%;">
+
+<h4 id="限流："><a href="#限流：" class="headerlink" title="限流："></a>限流：</h4><p>限流这里我觉得应该分为<strong>前端限流</strong>和<strong>后端限流</strong>。</p>
+<p><strong>前端限流</strong>：这个很简单，一般秒杀不会让你一直点的，一般都是点击一下或者两下然后几秒之后才可以继续点击，这也是保护服务器的一种手段。</p>
+<p><strong>后端限流</strong>：秒杀的时候肯定是涉及到后续的订单生成和支付等操作，但是都只是成功的幸运儿才会走到那一步，那一旦100个产品卖光了，return了一个false，前端直接秒杀结束，然后你后端也关闭后续无效请求的介入了。</p>
+<p>Tip：真正的限流还会有限流组件的加入例如：阿里的Sentinel、Hystrix等。我这里就不展开了，就说一下物理的限流。</p>
+<h4 id="库存预热："><a href="#库存预热：" class="headerlink" title="库存预热："></a>库存预热：</h4><p><strong>秒杀的本质，就是对库存的抢夺</strong>，每个秒杀的用户来你都去数据库查询库存校验库存，然后扣减库存，撇开性能因数，你不觉得这样好繁琐，对业务开发人员都不友好，而且数据库顶不住啊。</p>
+<p><strong>开发：你tm总算为我着想一次了。</strong></p>
+<p><img src="https://i02piccdn.sogoucdn.com/4a437aff2bada6e1"></p>
+<h4 id="那怎么办？"><a href="#那怎么办？" class="headerlink" title="那怎么办？"></a>那怎么办？</h4><p>我们都知道数据库顶不住但是他的兄弟非关系型的数据库<strong>Redis</strong>能顶啊！</p>
+<p>那不简单了，我们要开始秒杀前你通过定时任务或者运维同学<strong>提前把商品的库存加载到Redis中</strong>去，让整个流程都在Redis里面去做，然后等秒杀介绍了，再异步的去修改库存就好了。</p>
+<p>但是用了Redis就有一个问题了，我们上面说了我们采用<strong>主从</strong>，就是我们会去读取库存然后再判断然后有库存才去减库存，正常情况没问题，但是高并发的情况问题就很大了。</p>
+<p>这里我就不画图了，我本来想画图的，想了半天我觉得语言可能更好表达一点。</p>
+<p><strong>多品几遍！！！</strong>就比如现在库存只剩下1个了，我们高并发嘛，4个服务器一起查询了发现都是还有1个，那大家都觉得是自己抢到了，就都去扣库存，那结果就变成了-3，是的只有一个是真的抢到了，别的都是超卖的。咋办？</p>
+<h3 id="Lua："><a href="#Lua：" class="headerlink" title="Lua："></a>Lua：</h3><p>之前的文章就简单的提到了他，我今天就多一定点篇幅说一下吧。</p>
+<blockquote>
+<p><strong>Lua</strong> 脚本功能是 Reids在 2.6 版本的最大亮点， 通过内嵌对 Lua 环境的支持， Redis 解决了长久以来不能高效地处理 <strong>CAS</strong> （check-and-set）命令的缺点， 并且可以通过组合使用多个命令， 轻松实现以前很难实现或者不能高效实现的模式。</p>
+</blockquote>
+<p><strong>Lua脚本是类似Redis事务，有一定的原子性，不会被其他命令插队，可以完成一些Redis事务性的操作。</strong>这点是关键。</p>
+<p>知道原理了，我们就写一个脚本把判断库存扣减库存的操作都写在一个脚本丢给Redis去做，那到0了后面的都Return False了是吧，一个失败了你修改一个开关，直接挡住所有的请求，然后再做后面的事情嘛。</p>
+<h4 id="限流-amp-降级-amp-熔断-amp-隔离："><a href="#限流-amp-降级-amp-熔断-amp-隔离：" class="headerlink" title="限流&amp;降级&amp;熔断&amp;隔离："></a>限流&amp;降级&amp;熔断&amp;隔离：</h4><p>这个为啥要做呢，不怕一万就怕万一，万一你真的顶不住了，<strong>限流</strong>，顶不住就挡一部分出去但是不能说不行，<strong>降级</strong>，降级了还是被打挂了，<strong>熔断</strong>，至少不要影响别的系统，<strong>隔离</strong>，你本身就独立的，但是你会调用其他的系统嘛，你快不行了你别拖累兄弟们啊。</p>
+<h4 id="削峰填谷："><a href="#削峰填谷：" class="headerlink" title="削峰填谷："></a>削峰填谷：</h4><p>一说到这个名词，很多小伙伴就知道了，对的<strong>MQ</strong>，你买东西少了你直接100个请求改库我觉得没问题，但是万一秒杀一万个，10万个呢？服务器挂了，<strong>程序员又要背锅的</strong>。</p>
+<p>Tip：<strong>可能小伙伴说我们业务达不到这个量级，没必要。但是我想说我们写代码，就不应该写出有逻辑漏洞的代码，至少以后公司体量上去了，别人一看居然不用改代码，一看代码作者是敖丙？有点东西！</strong></p>
+<p>你可以把它放消息队列，然后一点点消费去改库存就好了嘛，不过单个商品其实一次修改就够了，我这里说的是<strong>某个点多个商品</strong>一起秒杀的场景，像极了双十一零点。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里我想我已经基本上把该考虑的点还有对应的解决方案也都说了一下，不知道还有没有没考虑到的，但是就算没考虑到我想我这个设计，应该也能撑住一个完整的秒杀流程。</p>
+<p>（有大佬的话给敖丙点多的思路，去GitHub <a target="_blank" rel="noopener" href="https://github.com/AobingJava/JavaFamily">https://github.com/JavaFamily</a> 上给我提，也有我的联系）</p>
+<p>最后我就画个完整的流程图给大家收个尾吧！</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g92dbyzsm7j30u80tqq4t.jpg"><br>Tip：这个链路还是比较简单的，很多细节的点全部画出来就太复杂了，我上面已经提到了所有的注意点了，大家都看看，真正的秒杀有比我这个简单的，也有比我这个复杂N倍的，之前的电商老东家就做的很高级，有机会也可以跟你们探讨，不过是面试嘛，我就给思路，让你理解比较关键的点。</p>
+<p>秒杀这章我脑细胞死了很多，考虑了很多个点，最后还是出来了，忍不住给自己<strong>点赞</strong>！</p>
+<p>（<strong>这章是真的不要白嫖，每次都看了不点赞，你们想白嫖我么？你们好坏喲，不过我好喜欢</strong>）</p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>我们玩归玩，闹归闹，别拿面试开玩笑。</p>
+<p>秒杀不一定是每个同学都会问到的，至少肯定没<strong>Redis基础</strong>那样常问，但是一旦问到，大家一定要回答到点上。</p>
+<p>至少你得说出<strong>可能出现的情况</strong>，<strong>需要注意的情况</strong>，以及对于的<strong>解决思路和方案</strong>。</p>
+<p>最后就是需要对整个链路比较熟悉，注意是一个完整的链路，前端怎么设计的呀，网关的作用呀，怎么<strong>解决Redis的并发竞争</strong>啊，<strong>数据的同步方式</strong>呀，<strong>MQ的作用</strong>啊。</p>
+<p>（提到MQ又是一整条的知识链路，什么异步、削峰、解耦等等，所以面试，我们还是不打没有把握的胜仗）</p>
+<h3 id="流着泪说再见"><a href="#流着泪说再见" class="headerlink" title="流着泪说再见"></a>流着泪说再见</h3><p><strong>Redis系列</strong>到此是真的要跟大家说再见了，写了7篇文章，其实很多大佬的思路和片段真心赞，其实大家看出来了我的文章个人风格色彩特别浓厚，我个人在生活中就是这么说话的，也希望用这种风格把原本枯燥乏味的知识点让大家都像看小说一样津津有味的看下去，不知道大家什么感受，好的不好的都请给我留言。</p>
+<p>我写作的时间都是业余时间，基本上周末和晚上的时间都贡献出来了，我也是个新人很多点也没接触到，也要看书看资料才能写出来，所以有时候还是希望大家多多包涵。</p>
+<p>那我们下期见！</p>
+<p>下期写________________？</p>
+<p>不告诉你，哈哈！</p>
+<h2 id="日常求赞"><a href="#日常求赞" class="headerlink" title="日常求赞"></a>日常求赞</h2><p>好了各位，以上就是这篇文章的全部内容了，能看到这里的人呀，都是<strong>人才</strong>。</p>
+<p>创作不易，各位的支持和认可，就是我创作的最大动力，我们下篇文章见！</p>
+<hr>
+
                 
             </div>
             <hr/>
@@ -625,7 +743,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://youzi530.github.io/movies/index.html">https://youzi530.github.io/movies/index.html</a>
+                    <a href="https://youzi530.github.io/2021/11/04/miao-sha-xi-tong-she-ji/">https://youzi530.github.io/2021/11/04/miao-sha-xi-tong-she-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -859,13 +977,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/movies/index.html">
+                <a href="/2021/11/04/miao-sha-xi-tong-she-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="记录生活">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="秒杀系统设计">
                         
-                        <span class="card-title">记录生活</span>
+                        <span class="card-title">秒杀系统设计</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -876,7 +994,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
                             </span>
                         <span class="publish-author">
                             
@@ -894,16 +1012,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/movies/index.html">
+                <a href="/2021/10/29/bu-long-guo-lu-qi-bloomfilter/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="记录生活">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="布隆过滤器(BloomFilter)">
                         
-                        <span class="card-title">记录生活</span>
+                        <span class="card-title">布隆过滤器(BloomFilter)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -914,7 +1032,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
                             </span>
                         <span class="publish-author">
                             
@@ -924,7 +1042,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
