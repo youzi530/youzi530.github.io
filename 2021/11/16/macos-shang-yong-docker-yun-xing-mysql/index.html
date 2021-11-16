@@ -585,14 +585,14 @@ MySQL 是世界上最受欢迎的开源数据库。凭借其可靠性、易用�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    934
+                    998
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -685,14 +685,58 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 </code></pre>
 <h2 id="六、操作数据库"><a href="#六、操作数据库" class="headerlink" title="六、操作数据库"></a>六、操作数据库</h2><h4 id="1、登录MySQL"><a href="#1、登录MySQL" class="headerlink" title="1、登录MySQL"></a>1、登录MySQL</h4><pre class=" language-sql"><code class="language-sql">mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p
 </code></pre>
-<pre class=" language-sql"><code class="language-sql">root<span class="token variable">@e9488be5b71d</span>:<span class="token operator">/</span><span class="token comment" spellcheck="true"># mysql -u root -pEnter password: Welcome to the MySQL monitor.  Commands end with ; or \g.Your MySQL connection id is 8Server version: 8.0.19 MySQL Community Server - GPLCopyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.Oracle is a registered trademark of Oracle Corporation and/or itsaffiliates. Other names may be trademarks of their respectiveowners.Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</span>
+<pre class=" language-sql"><code class="language-sql">root<span class="token variable">@e9488be5b71d</span>:<span class="token operator">/</span><span class="token comment" spellcheck="true"># mysql -u root -p</span>
+Enter password: 
+Welcome <span class="token keyword">to</span> the MySQL monitor<span class="token punctuation">.</span>  Commands <span class="token keyword">end</span> <span class="token keyword">with</span> <span class="token punctuation">;</span> <span class="token operator">or</span> \g<span class="token punctuation">.</span>
+Your MySQL connection id <span class="token operator">is</span> <span class="token number">8</span>
+Server version: <span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">19</span> MySQL Community Server <span class="token operator">-</span> GPL
+
+Copyright <span class="token punctuation">(</span><span class="token number">c</span><span class="token punctuation">)</span> <span class="token number">2000</span><span class="token punctuation">,</span> <span class="token number">2020</span><span class="token punctuation">,</span> Oracle <span class="token operator">and</span><span class="token operator">/</span><span class="token operator">or</span> its affiliates<span class="token punctuation">.</span> <span class="token keyword">All</span> rights reserved<span class="token punctuation">.</span>
+
+Oracle <span class="token operator">is</span> <span class="token number">a</span> registered trademark <span class="token keyword">of</span> Oracle Corporation <span class="token operator">and</span><span class="token operator">/</span><span class="token operator">or</span> its
+affiliates<span class="token punctuation">.</span> Other names may <span class="token number">be</span> trademarks <span class="token keyword">of</span> their respective
+owners<span class="token punctuation">.</span>
+
+<span class="token keyword">Type</span> <span class="token string">'help;'</span> <span class="token operator">or</span> <span class="token string">'\h'</span> <span class="token keyword">for</span> help<span class="token punctuation">.</span> <span class="token keyword">Type</span> <span class="token string">'\c'</span> <span class="token keyword">to</span> clear the <span class="token keyword">current</span> input statement<span class="token punctuation">.</span>
 </code></pre>
 <h4 id="2、显示数据库"><a href="#2、显示数据库" class="headerlink" title="2、显示数据库"></a>2、显示数据库</h4><pre><code>$ show databases;
 </code></pre>
-<pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span><span class="token operator">+</span><span class="token comment" spellcheck="true">--------------------+| Database           |+--------------------+| information_schema || mysql              || performance_schema || sys                |+--------------------+4 rows in set (0.05 sec)</span>
+<pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">--------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Database</span>           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">--------------------+</span>
+<span class="token operator">|</span> information_schema <span class="token operator">|</span>
+<span class="token operator">|</span> mysql              <span class="token operator">|</span>
+<span class="token operator">|</span> performance_schema <span class="token operator">|</span>
+<span class="token operator">|</span> sys                <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">--------------------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.05</span> sec<span class="token punctuation">)</span>
 </code></pre>
 <h4 id="3、创建数据库用户zgpeace"><a href="#3、创建数据库用户zgpeace" class="headerlink" title="3、创建数据库用户zgpeace"></a>3、创建数据库用户zgpeace</h4><p>创建数据库用户zgpeace，并把所有权限授权与zgpeace， 退出root用户。</p>
-<pre><code>mysql&gt; create user 'zgpeace'@'%' identified with mysql_native_password by '123456';Query OK, 0 rows affected (0.02 sec)mysql&gt; grant all privileges on *.* to 'zgpeace'@'%';Query OK, 0 rows affected (0.01 sec)mysql&gt; exitBye
+<pre><code>root@e9488be5b71d:/# mysql -u zgpeace -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
 </code></pre>
 <p>用新创建的用户zgpeace登录。</p>
 <pre class=" language-sql"><code class="language-sql">root<span class="token variable">@e9488be5b71d</span>:<span class="token operator">/</span><span class="token comment" spellcheck="true"># mysql -u zgpeace -pEnter password: Welcome to the MySQL monitor.  Commands end with ; or \g.Your MySQL connection id is 9Server version: 8.0.19 MySQL Community Server - GPLCopyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.Oracle is a registered trademark of Oracle Corporation and/or itsaffiliates. Other names may be trademarks of their respectiveowners.Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.mysql> show databases;+--------------------+| Database           |+--------------------+| information_schema || mysql              || performance_schema || sys                |+--------------------+4 rows in set (0.00 sec)</span>
