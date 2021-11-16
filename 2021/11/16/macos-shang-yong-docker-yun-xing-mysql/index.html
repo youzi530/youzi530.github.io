@@ -585,7 +585,7 @@ MySQL 是世界上最受欢迎的开源数据库。凭借其可靠性、易用�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    998
+                    1k
                 </div>
                 
 
@@ -658,11 +658,11 @@ $ docker pull mysql:<span class="token number">8</span>
 <h2 id="四、运行容器"><a href="#四、运行容器" class="headerlink" title="四、运行容器"></a>四、运行容器</h2><pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span> docker run <span class="token operator">-</span>itd <span class="token comment" spellcheck="true">--name docker-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -v ~/Docker/db/mysql/8.0.9:/var/lib/mysql mysql</span>
 </code></pre>
 <p>参数解析：</p>
-<pre><code>- -itd：i是交互式操作，t是一个终端，d指的是在后台运行
-- -p : 设置端口，
-- --name : 取名 ，
-- -e MYSQL_ROOT_PASSWORD=123456 : -e 指定环境变量, 设置 账号为 root ，密码为 123456.
-- -v ~/mysql/data:/var/lib/mysql 是将Docker的/var/lib/mysql 文件夹映射到本机的~/Docker/db/mysql/8.0.9
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">-</span>itd：i是交互式操作，t是一个终端，<span class="token number">d</span>指的是在后台运行
+<span class="token operator">-</span>p : 设置端口，
+<span class="token comment" spellcheck="true">--name : 取名 ，</span>
+<span class="token operator">-</span><span class="token number">e</span> MYSQL_ROOT_PASSWORD<span class="token operator">=</span><span class="token number">123456</span> : <span class="token operator">-</span><span class="token number">e</span> 指定环境变量<span class="token punctuation">,</span> 设置 账号为 root ，密码为 <span class="token number">123456</span><span class="token punctuation">.</span>
+<span class="token operator">-</span>v <span class="token operator">~</span><span class="token operator">/</span>mysql<span class="token operator">/</span><span class="token keyword">data</span>:<span class="token operator">/</span>var<span class="token operator">/</span>lib<span class="token operator">/</span>mysql 是将Docker的<span class="token operator">/</span>var<span class="token operator">/</span>lib<span class="token operator">/</span>mysql 文件夹映射到本机的<span class="token operator">~</span><span class="token operator">/</span>Docker<span class="token operator">/</span><span class="token number">db</span><span class="token operator">/</span>mysql<span class="token operator">/</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">9</span>
 </code></pre>
 <p>查看进程如下：</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span> docker ps
@@ -713,33 +713,56 @@ owners<span class="token punctuation">.</span>
 <span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.05</span> sec<span class="token punctuation">)</span>
 </code></pre>
 <h4 id="3、创建数据库用户zgpeace"><a href="#3、创建数据库用户zgpeace" class="headerlink" title="3、创建数据库用户zgpeace"></a>3、创建数据库用户zgpeace</h4><p>创建数据库用户zgpeace，并把所有权限授权与zgpeace， 退出root用户。</p>
-<pre><code>root@e9488be5b71d:/# mysql -u zgpeace -p
-Enter password: 
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 9
-Server version: 8.0.19 MySQL Community Server - GPL
+<pre class=" language-java"><code class="language-java">root<span class="token annotation punctuation">@e9488be5b71d</span><span class="token operator">:</span><span class="token operator">/</span># mysql <span class="token operator">-</span>u zgpeace <span class="token operator">-</span>p
+Enter password<span class="token operator">:</span> 
+Welcome to the MySQL monitor<span class="token punctuation">.</span>  Commands end with <span class="token punctuation">;</span> or \g<span class="token punctuation">.</span>
+Your MySQL connection id is <span class="token number">9</span>
+Server version<span class="token operator">:</span> <span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">19</span> MySQL Community Server <span class="token operator">-</span> GPL
 
-Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+<span class="token function">Copyright</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token number">2000</span><span class="token punctuation">,</span> <span class="token number">2020</span><span class="token punctuation">,</span> Oracle and<span class="token operator">/</span>or its affiliates<span class="token punctuation">.</span> All rights reserved<span class="token punctuation">.</span>
 
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
+Oracle is a registered trademark of Oracle Corporation and<span class="token operator">/</span>or its
+affiliates<span class="token punctuation">.</span> Other names may be trademarks of their respective
+owners<span class="token punctuation">.</span>
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type <span class="token string">'help;'</span> or <span class="token string">'\h'</span> <span class="token keyword">for</span> help<span class="token punctuation">.</span> Type <span class="token string">'\c'</span> to clear the current input statement<span class="token punctuation">.</span>
 
-mysql&gt; show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-4 rows in set (0.00 sec)
+mysql<span class="token operator">></span> show databases<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">+</span>
+<span class="token operator">|</span> Database           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">+</span>
+<span class="token operator">|</span> information_schema <span class="token operator">|</span>
+<span class="token operator">|</span> mysql              <span class="token operator">|</span>
+<span class="token operator">|</span> performance_schema <span class="token operator">|</span>
+<span class="token operator">|</span> sys                <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">+</span>
+<span class="token number">4</span> rows in <span class="token function">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
 </code></pre>
 <p>用新创建的用户zgpeace登录。</p>
-<pre class=" language-sql"><code class="language-sql">root<span class="token variable">@e9488be5b71d</span>:<span class="token operator">/</span><span class="token comment" spellcheck="true"># mysql -u zgpeace -pEnter password: Welcome to the MySQL monitor.  Commands end with ; or \g.Your MySQL connection id is 9Server version: 8.0.19 MySQL Community Server - GPLCopyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.Oracle is a registered trademark of Oracle Corporation and/or itsaffiliates. Other names may be trademarks of their respectiveowners.Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.mysql> show databases;+--------------------+| Database           |+--------------------+| information_schema || mysql              || performance_schema || sys                |+--------------------+4 rows in set (0.00 sec)</span>
+<pre class=" language-java"><code class="language-java">root<span class="token annotation punctuation">@e9488be5b71d</span><span class="token operator">:</span><span class="token operator">/</span># mysql <span class="token operator">-</span>u zgpeace <span class="token operator">-</span>p
+Enter password<span class="token operator">:</span> 
+Welcome to the MySQL monitor<span class="token punctuation">.</span>  Commands end with <span class="token punctuation">;</span> or \g<span class="token punctuation">.</span>
+Your MySQL connection id is <span class="token number">9</span>
+Server version<span class="token operator">:</span> <span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">19</span> MySQL Community Server <span class="token operator">-</span> GPL
+
+<span class="token function">Copyright</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token number">2000</span><span class="token punctuation">,</span> <span class="token number">2020</span><span class="token punctuation">,</span> Oracle and<span class="token operator">/</span>or its affiliates<span class="token punctuation">.</span> All rights reserved<span class="token punctuation">.</span>
+
+Oracle is a registered trademark of Oracle Corporation and<span class="token operator">/</span>or its
+affiliates<span class="token punctuation">.</span> Other names may be trademarks of their respective
+owners<span class="token punctuation">.</span>
+
+Type <span class="token string">'help;'</span> or <span class="token string">'\h'</span> <span class="token keyword">for</span> help<span class="token punctuation">.</span> Type <span class="token string">'\c'</span> to clear the current input statement<span class="token punctuation">.</span>
+
+mysql<span class="token operator">></span> show databases<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">+</span>
+<span class="token operator">|</span> Database           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">+</span>
+<span class="token operator">|</span> information_schema <span class="token operator">|</span>
+<span class="token operator">|</span> mysql              <span class="token operator">|</span>
+<span class="token operator">|</span> performance_schema <span class="token operator">|</span>
+<span class="token operator">|</span> sys                <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">+</span>
+<span class="token number">4</span> rows in <span class="token function">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
 </code></pre>
 <h4 id="七、实操"><a href="#七、实操" class="headerlink" title="七、实操"></a>七、实操</h4><p><img src="/2021/11/16/macos-shang-yong-docker-yun-xing-mysql/image-20211116104536574.png" alt="image-20211116104536574"></p>
 <p><img src="/2021/11/16/macos-shang-yong-docker-yun-xing-mysql/image-20211116104614716.png" alt="image-20211116104614716"></p>
