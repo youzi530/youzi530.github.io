@@ -1906,7 +1906,15 @@
 </blockquote>
 <p>我们假设要搭建两条EurekaServer的集群，端口分别为：10086和10087</p>
 <p>1）我们修改原来的EurekaServer配置：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">10086 </span><span class="token comment" spellcheck="true"># 端口spring:  application:    name: eureka-server # 应用名称，会在Eureka中显示eureka:  client:    service-url: # 配置其他Eureka服务的地址，而不是自己，比如10087      defaultZone: http://127.0.0.1:10087/eureka</span>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">10086 </span><span class="token comment" spellcheck="true"># 端口</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>    
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> eureka<span class="token punctuation">-</span>server <span class="token comment" spellcheck="true"># 应用名称，会在Eureka中显示</span>
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>    
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 配置其他Eureka服务的地址，而不是自己，比如10087      </span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//127.0.0.1<span class="token punctuation">:</span>10087/eureka
 </code></pre>
 <p>所谓的高可用注册中心，其实就是把EurekaServer自己也作为一个服务进行注册，这样多个EurekaServer之间就能互相发现对方，从而形成集群。因此我们做了以下修改：</p>
 <ul>
@@ -1914,7 +1922,15 @@
 <li>把service-url的值改成了另外一台EurekaServer的地址，而不是自己</li>
 </ul>
 <p>2）另外一台配置恰好相反：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">10087 </span><span class="token comment" spellcheck="true"># 端口spring:  application:    name: eureka-server # 应用名称，会在Eureka中显示eureka:  client:    service-url: # 配置其他Eureka服务的地址，而不是自己，比如10087      defaultZone: http://127.0.0.1:10086/eureka</span>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">10087 </span><span class="token comment" spellcheck="true"># 端口</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>    
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> eureka<span class="token punctuation">-</span>server <span class="token comment" spellcheck="true"># 应用名称，会在Eureka中显示</span>
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>    
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 配置其他Eureka服务的地址，而不是自己，比如10087      </span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//127.0.0.1<span class="token punctuation">:</span>10086/eureka
 </code></pre>
 <p>注意：idea中一个应用不能启动两次，我们需要重新配置一个启动器：</p>
 <p><img src="/2021/11/17/leyou02-ren-shi-wei-fu-wu/1525615070033.png" alt="1525615070033"></p>
