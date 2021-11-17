@@ -590,14 +590,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9k
+                    10k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    36 分
+                    41 分
                 </div>
                 
 
@@ -1603,6 +1603,165 @@ eclipse中没有测试过。
 <span class="token number">2</span>、覆盖默认配置
 <span class="token number">3</span>、添加引导类：<span class="token annotation punctuation">@SpringBootApplication</span>  <span class="token operator">*</span>
 </code></pre>
+<h2 id="6-4springboot常见的启动器"><a href="#6-4springboot常见的启动器" class="headerlink" title="6.4springboot常见的启动器"></a>6.4springboot常见的启动器</h2><pre class=" language-java"><code class="language-java"><span class="token number">1</span><span class="token punctuation">.</span>    Spring Boot application starters
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>thymeleaf
+  使用Thymeleaf视图构建MVC Web应用程序
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>ws
+  使用Spring Web服务。<span class="token number">1.4</span>不推荐使用，推荐使用spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>web<span class="token operator">-</span>services
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>couchbase
+  Starter <span class="token keyword">for</span> using Couchbase document<span class="token operator">-</span>oriented database and Spring Data Couchbase
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>artemis
+  使用Apache Artemis启动JMS消息传递
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>web<span class="token operator">-</span>services
+  使用Spring Web服务
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>mail
+  支持使用Java Mail和Spring Framework发送电子邮件
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>redis
+  使用Redis键值数据存储与Spring Data Redis和Jedis客户端
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>web
+  启动器构建web，包括RESTful，使用Spring MVC的应用程序。使用Tomcat作为默认嵌入式容器
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>gemfire
+  Starter <span class="token keyword">for</span> using GemFire distributed data store and Spring Data GemFire
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>activemq
+  使用Apache ActiveMQ启动JMS消息传递
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>elasticsearch
+  使用Elasticsearch搜索和分析引擎和Spring Data Elasticsearch
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>integration
+  Starter <span class="token keyword">for</span> using Spring Integration
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>test
+  Spring Boot应用程序用于测试包括JUnit，Hamcrest和Mockito
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>hornetq
+  使用HornetQ启动JMS消息传递。<span class="token number">1.4</span>已弃用，推荐使用spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>artemis
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jdbc
+  使用HikariCP连接池
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>mobile
+  使用Spring Mobile构建Web应用程序的入门
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>validation
+  使用Java Bean校验与Hibernate校验器
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>hateoas
+  使用Spring MVC和Spring HATEOAS构建基于超媒体的RESTful Web应用程序的入门
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jersey
+  使用JAX<span class="token operator">-</span>RS和Jersey构建RESTful Web应用程序的入门。 spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>web的替代品
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>neo4j
+  使用Neo4j图数据库和Spring Data Neo4j
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>websocket
+  使用Spring Framework的WebSocket支持构建WebSocket应用程序
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>aop
+  使用Spring AOP和AspectJ进行面向方面编程
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>amqp
+  使用Spring AMQP和Rabbit MQ的入门
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>cassandra
+  使用Cassandra分布式数据库和Spring Data Cassandra
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>social<span class="token operator">-</span>facebook
+  使用Spring Social Facebook
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jta<span class="token operator">-</span>atomikos
+  使用Atomikos进行JTA事务
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>security
+  使用Spring Security
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>mustache
+  使用Mustache视图构建MVC Web应用程序
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>jpa
+  使用Spring Data JPA与Hibernate
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter
+  核心启动器，包括自动配置支持，日志记录和YAML
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>velocity
+  使用Velocity视图构建MVC Web应用程序。<span class="token number">1.4</span>已弃用
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>groovy<span class="token operator">-</span>templates
+  使用Groovy模板视图构建MVC Web应用程序
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>freemarker
+  使用FreeMarker视图构建MVC Web应用程序
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>batch
+  使用Spring Batch
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>redis
+  使用Redis键值数据存储与Spring Data Redis和Jedis客户端的入门。<span class="token number">1.4</span>已弃用，建议使用spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>redis
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>social<span class="token operator">-</span>linkedin
+  Stater <span class="token keyword">for</span> using Spring Social LinkedIn
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>cache
+  支持使用Spring Framework的缓存
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>solr
+  使用带有Spring Data Solr的Apache Solr搜索平台
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>mongodb
+  使用MongoDB和Spring Data MongoDB
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jooq
+  使用jOOQ访问SQL数据库。 spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>jpa或spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jdbc的替代方法
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jta<span class="token operator">-</span>narayana
+  Spring Boot启动Narayana JTA
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>cloud<span class="token operator">-</span>connectors
+  启动者使用Spring Cloud连接器，简化了连接到云平台中的服务，如Cloud Foundry和Heroku
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jta<span class="token operator">-</span>bitronix
+  使用Bitronix进行JTA事务
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>social<span class="token operator">-</span>twitter
+  使用Spring Social Twitter
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>rest
+  使用Spring Data REST通过REST暴露Spring数据存储库
+
+  <span class="token number">2</span><span class="token punctuation">.</span>    Spring Boot production starters
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>actuator
+  使用Spring Boot的Actuator，提供生产就绪的功能，以帮助您监视和管理您的应用程序
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>remote<span class="token operator">-</span>shell
+  使用CRaSH远程shell通过SSH监视和管理您的应用程序
+
+  <span class="token number">3</span><span class="token punctuation">.</span>    Spring Boot technical starters
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>undertow
+  使用Undertow作为嵌入式servlet容器。 spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>tomcat的替代方法
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jetty
+  使用Jetty作为嵌入式servlet容器的。 spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>tomcat的替代方法
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>logging
+  使用Logback进行日志记录。 默认日志启动器
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>tomcat
+  使用Tomcat作为嵌入式servlet容器。 spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>web使用的默认servlet容器
+
+  spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>log4j2
+  使用Log4j2进行日志记录。 spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>logging的替代方法
+</code></pre>
 
                 
             </div>
@@ -2207,7 +2366,7 @@ eclipse中没有测试过。
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.3k</span>
+                        class="white-color">18.3k</span>
             
             
             
