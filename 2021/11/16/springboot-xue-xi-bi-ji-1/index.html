@@ -39,8 +39,8 @@
 
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="柚子小屋" type="application/atom+xml">
-</head>
+<link rel="alternate" href="/atom.xml" title="柚子小屋" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -583,7 +583,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-16
+                    2021-11-17
                 </div>
                 
 
@@ -1556,53 +1556,52 @@ afterCompletion method is running<span class="token operator">!</span>
 <span class="token attr-name">spring.thymeleaf.cache</span><span class="token punctuation">=</span><span class="token attr-value">false</span>
 </code></pre>
 <p><strong>注意</strong>：</p>
-<pre><code>在Idea中，我们需要在修改页面后按快捷键：`Ctrl + Shift + F9` 对项目进行rebuild才可以。
-
+<pre class=" language-java"><code class="language-java">在Idea中，我们需要在修改页面后按快捷键：`Ctrl <span class="token operator">+</span> Shift <span class="token operator">+</span> F9` 对项目进行rebuild才可以。
 eclipse中没有测试过。
 </code></pre>
 <p>我们可以修改页面，测试一下。</p>
-<h1 id="6、总结（凌）"><a href="#6、总结（凌）" class="headerlink" title="6、总结（凌）"></a>6、总结（凌）</h1><h2 id="6-1各种注解总结"><a href="#6-1各种注解总结" class="headerlink" title="6.1各种注解总结"></a>6.1各种注解总结</h2><pre><code>@RestController
+<h1 id="6、总结（凌）"><a href="#6、总结（凌）" class="headerlink" title="6、总结（凌）"></a>6、总结（凌）</h1><h2 id="6-1各种注解总结"><a href="#6-1各种注解总结" class="headerlink" title="6.1各种注解总结"></a>6.1各种注解总结</h2><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
 
-@EnableAutoConfiguration 开启springboot的自动配置，并且根据你引入的依赖来生效对应的默认配置
-@ComponentScan
-@SpringBootApplication  *
+<span class="token annotation punctuation">@EnableAutoConfiguration</span> 开启springboot的自动配置，并且根据你引入的依赖来生效对应的默认配置
+<span class="token annotation punctuation">@ComponentScan</span>
+<span class="token annotation punctuation">@SpringBootApplication</span>  <span class="token operator">*</span>
 
-@SpringBootConfiguration
-@Configuration *
+<span class="token annotation punctuation">@SpringBootConfiguration</span>
+<span class="token annotation punctuation">@Configuration</span> <span class="token operator">*</span>
 
-@PropertySource
-@Bean * 把方法的返回值注入到spring容器中
-@Value
+<span class="token annotation punctuation">@PropertySource</span>
+<span class="token annotation punctuation">@Bean</span> <span class="token operator">*</span> 把方法的返回值注入到spring容器中
+<span class="token annotation punctuation">@Value</span>
 
-@ConfigurationProperties *  申明一个类是一个属性读取类，读取配置文件的内容（读取默认的配置文件）
-@EnableConfigurationProperties 开启上面那个注解的读取
+<span class="token annotation punctuation">@ConfigurationProperties</span> <span class="token operator">*</span>  申明一个类是一个属性读取类，读取配置文件的内容（读取默认的配置文件）
+<span class="token annotation punctuation">@EnableConfigurationProperties</span> 开启上面那个注解的读取
 </code></pre>
-<h2 id="6-2springboot整合"><a href="#6-2springboot整合" class="headerlink" title="6.2springboot整合"></a>6.2springboot整合</h2><pre><code>整合springMVC    
-1、修改端口    
-2、访问静态资源    
-3、拦截器：        
+<h2 id="6-2springboot整合"><a href="#6-2springboot整合" class="headerlink" title="6.2springboot整合"></a>6.2springboot整合</h2><pre class=" language-java"><code class="language-java">整合springMVC    
+<span class="token number">1</span>、修改端口    
+<span class="token number">2</span>、访问静态资源    
+<span class="token number">3</span>、拦截器：        
     自定义拦截器：实现HandlerInterceptor接口        
     配置拦截器：自定义一个java配置类，实现webMvcConfigurer接口
 
 整合数据源    
-1、引入jdbc启动器和mysql的驱动   
-2、添加配置，以及四大参数
+<span class="token number">1</span>、引入jdbc启动器和mysql的驱动   
+<span class="token number">2</span>、添加配置，以及四大参数
 
 整合mybatis    
-1、引入启动器    
-2、添加配置，覆盖默认配置   
-3、定义一个接口，在接口上添加@Mapper接口
+<span class="token number">1</span>、引入启动器    
+<span class="token number">2</span>、添加配置，覆盖默认配置   
+<span class="token number">3</span>、定义一个接口，在接口上添加<span class="token annotation punctuation">@Mapper</span>接口
 
 整合通用mapper   
-1、引入启动器    
-2、接口继承Mapper&lt;User&gt;
+<span class="token number">1</span>、引入启动器    
+<span class="token number">2</span>、接口继承Mapper<span class="token operator">&lt;</span>User<span class="token operator">></span>
 
 整合事务    
-添加@Transctional
+添加<span class="token annotation punctuation">@Transctional</span>
 </code></pre>
-<h2 id="6-3springboot的基本使用"><a href="#6-3springboot的基本使用" class="headerlink" title="6.3springboot的基本使用"></a>6.3springboot的基本使用</h2><pre><code>1、引入统一的父工程，以及需要的启动器
-2、覆盖默认配置
-3、添加引导类：@SpringBootApplication  *
+<h2 id="6-3springboot的基本使用"><a href="#6-3springboot的基本使用" class="headerlink" title="6.3springboot的基本使用"></a>6.3springboot的基本使用</h2><pre class=" language-java"><code class="language-java"><span class="token number">1</span>、引入统一的父工程，以及需要的启动器
+<span class="token number">2</span>、覆盖默认配置
+<span class="token number">3</span>、添加引导类：<span class="token annotation punctuation">@SpringBootApplication</span>  <span class="token operator">*</span>
 </code></pre>
 
                 
