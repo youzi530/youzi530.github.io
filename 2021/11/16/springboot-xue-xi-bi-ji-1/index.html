@@ -1563,15 +1563,15 @@ eclipse中没有测试过。
 <h1 id="6、总结（凌）"><a href="#6、总结（凌）" class="headerlink" title="6、总结（凌）"></a>6、总结（凌）</h1><h2 id="6-1各种注解总结"><a href="#6-1各种注解总结" class="headerlink" title="6.1各种注解总结"></a>6.1各种注解总结</h2><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
 
 <span class="token annotation punctuation">@EnableAutoConfiguration</span> 开启springboot的自动配置，并且根据你引入的依赖来生效对应的默认配置
-<span class="token annotation punctuation">@ComponentScan</span>
-<span class="token annotation punctuation">@SpringBootApplication</span>  <span class="token operator">*</span>
+<span class="token annotation punctuation">@ComponentScan</span>  开启注解扫描
+<span class="token annotation punctuation">@SpringBootApplication</span>  <span class="token operator">*</span> 相当于上面两个注解的总和
 
-<span class="token annotation punctuation">@SpringBootConfiguration</span>
+<span class="token annotation punctuation">@SpringBootConfiguration</span>  相当于Configuration的注解，申明一个类是一个java配置类，通常一个工程中只有一个这个注解
 <span class="token annotation punctuation">@Configuration</span> <span class="token operator">*</span>
 
 <span class="token annotation punctuation">@PropertySource</span>
 <span class="token annotation punctuation">@Bean</span> <span class="token operator">*</span> 把方法的返回值注入到spring容器中
-<span class="token annotation punctuation">@Value</span>
+<span class="token annotation punctuation">@Value</span>  属性注入
 
 <span class="token annotation punctuation">@ConfigurationProperties</span> <span class="token operator">*</span>  申明一个类是一个属性读取类，读取配置文件的内容（读取默认的配置文件）
 <span class="token annotation punctuation">@EnableConfigurationProperties</span> 开启上面那个注解的读取
@@ -1599,6 +1599,7 @@ eclipse中没有测试过。
 整合事务    
 添加<span class="token annotation punctuation">@Transctional</span>
 </code></pre>
+<p><img src="/2021/11/16/springboot-xue-xi-bi-ji-1/img.png" alt="img.png"><br><img src="/2021/11/16/springboot-xue-xi-bi-ji-1/img1.png" alt="img.png"><br><img src="/2021/11/16/springboot-xue-xi-bi-ji-1/img3.png" alt="img.png"></p>
 <h2 id="6-3springboot的基本使用"><a href="#6-3springboot的基本使用" class="headerlink" title="6.3springboot的基本使用"></a>6.3springboot的基本使用</h2><pre class=" language-java"><code class="language-java"><span class="token number">1</span>、引入统一的父工程，以及需要的启动器
 <span class="token number">2</span>、覆盖默认配置
 <span class="token number">3</span>、添加引导类：<span class="token annotation punctuation">@SpringBootApplication</span>  <span class="token operator">*</span>
@@ -2366,7 +2367,7 @@ eclipse中没有测试过。
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">18.3k</span>
+                        class="white-color">18.4k</span>
             
             
             
