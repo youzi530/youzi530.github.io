@@ -898,7 +898,9 @@ Hystrix也">
 <h2 id="2-4-Hystrix支持"><a href="#2-4-Hystrix支持" class="headerlink" title="2.4.Hystrix支持"></a>2.4.Hystrix支持</h2><p>Feign默认也有对Hystrix的集成：</p>
 <p><img src="/2021/11/18/leyou03-wei-fu-wu-qi-ta-zu-jian/1528861288636.png" alt="1528861288636"></p>
 <p>只不过，默认情况下是关闭的。我们需要通过下面的参数来开启：(在itcast-service-consumer工程添加配置内容)</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">feign</span><span class="token punctuation">:</span>  <span class="token key atrule">hystrix</span><span class="token punctuation">:</span>    <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true </span><span class="token comment" spellcheck="true"># 开启Feign的熔断功能</span>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">feign</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">hystrix</span><span class="token punctuation">:</span>    
+    <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true </span><span class="token comment" spellcheck="true"># 开启Feign的熔断功能</span>
 </code></pre>
 <p>但是，Feign中的Fallback配置不像hystrix中那样简单了。</p>
 <p>1）首先，我们要定义一个类UserClientFallback，实现刚才编写的UserClient，作为fallback的处理类</p>
@@ -982,15 +984,17 @@ Hystrix也">
 </code></pre>
 <p>先来说说这样架构需要做的一些事儿以及存在的不足：</p>
 <ul>
-<li><p>破坏了服务无状态特点。</p>
-<pre><code>为了保证对外服务的安全性，我们需要实现对服务访问的权限控制，而开放服务的权限控制机制将会贯穿并污染整个开放服务的业务逻辑，这会带来的最直接问题是，破坏了服务集群中REST API无状态的特点。从具体开发和测试的角度来说，在工作中除了要考虑实际的业务逻辑之外，还需要额外考虑对接口访问的控制处理。
-</code></pre>
-</li>
-<li><p>无法直接复用既有接口。</p>
-<pre><code>当我们需要对一个即有的集群内访问接口，实现外部服务访问时，我们不得不通过在原有接口上增加校验逻辑，或增加一个代理调用来实现权限控制，无法直接复用原有的接口。
-</code></pre>
-</li>
+<li>破坏了服务无状态特点。</li>
 </ul>
+<blockquote>
+<p>为了保证对外服务的安全性，我们需要实现对服务访问的权限控制，而开放服务的权限控制机制将会贯穿并污染整个开放服务的业务逻辑，这会带来的最直接问题是，破坏了服务集群中REST API无状态的特点。从具体开发和测试的角度来说，在工作中除了要考虑实际的业务逻辑之外，还需要额外考虑对接口访问的控制处理。</p>
+</blockquote>
+<ul>
+<li>无法直接复用既有接口。</li>
+</ul>
+<blockquote>
+<p>当我们需要对一个即有的集群内访问接口，实现外部服务访问时，我们不得不通过在原有接口上增加校验逻辑，或增加一个代理调用来实现权限控制，无法直接复用原有的接口。</p>
+</blockquote>
 <p>面对类似上面的问题，我们要如何解决呢？答案是：服务网关！</p>
 <p>为了解决上面这些问题，我们需要将权限控制这样的东西从我们的服务单元中抽离出去，而最适合这些逻辑的地方就是处于对外访问最前端的地方，我们需要一个更强大一些的均衡负载器的 服务网关。</p>
 <p>服务网关是微服务架构中一个不可或缺的部分。通过服务网关统一向外系统提供REST API的过程中，除了具备<code>服务路由</code>、<code>均衡负载</code>功能之外，它还具备了<code>权限控制</code>等功能。Spring Cloud Netflix中的Zuul就担任了这样的一个角色，为微服务架构提供了前门保护的作用，同时将权限控制这些较重的非业务逻辑内容迁移到服务路由层面，使得服务集群主体能够具备更高的可复用性和可测试性。</p>
