@@ -982,8 +982,9 @@ Hystrix也">
 <p><img src="/2021/11/18/leyou03-wei-fu-wu-qi-ta-zu-jian/1528863489923.png" alt="1528863489923"></p>
 <h1 id="3-Zuul网关"><a href="#3-Zuul网关" class="headerlink" title="3.Zuul网关"></a>3.Zuul网关</h1><p>通过前面的学习，使用Spring Cloud实现微服务的架构基本成型，大致是这样的：</p>
 <p><img src="/2021/11/18/leyou03-wei-fu-wu-qi-ta-zu-jian/1525674644660.png" alt="1525674644660"></p>
-<pre><code>我们使用Spring Cloud Netflix中的Eureka实现了服务注册中心以及服务注册与发现；而服务间通过Ribbon或Feign实现服务的消费以及均衡负载。为了使得服务集群更为健壮，使用Hystrix的融断机制来避免在微服务架构中个别服务出现异常时引起的故障蔓延。在该架构中，我们的服务集群包含：内部服务Service A和Service B，他们都会注册与订阅服务至Eureka Server，而Open Service是一个对外的服务，通过均衡负载公开至服务调用方。我们把焦点聚集在对外服务这块，直接暴露我们的服务地址，这样的实现是否合理，或者是否有更好的实现方式呢？
-</code></pre>
+<blockquote>
+<p>我们使用Spring Cloud Netflix中的Eureka实现了服务注册中心以及服务注册与发现；而服务间通过Ribbon或Feign实现服务的消费以及均衡负载。为了使得服务集群更为健壮，使用Hystrix的融断机制来避免在微服务架构中个别服务出现异常时引起的故障蔓延。在该架构中，我们的服务集群包含：内部服务Service A和Service B，他们都会注册与订阅服务至Eureka Server，而Open Service是一个对外的服务，通过均衡负载公开至服务调用方。我们把焦点聚集在对外服务这块，直接暴露我们的服务地址，这样的实现是否合理，或者是否有更好的实现方式呢？</p>
+</blockquote>
 <p>先来说说这样架构需要做的一些事儿以及存在的不足：</p>
 <ul>
 <li>破坏了服务无状态特点。</li>
