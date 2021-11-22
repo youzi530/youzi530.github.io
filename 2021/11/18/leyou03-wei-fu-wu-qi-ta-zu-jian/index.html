@@ -607,21 +607,21 @@ Hystrix也">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-18
+                    2021-11-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.1k
+                    6.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    24 分
                 </div>
                 
 
@@ -830,6 +830,8 @@ Hystrix也">
 <li>errorThresholdPercentage：触发熔断的失败请求最小占比，默认50%</li>
 <li>sleepWindowInMilliseconds：休眠时长，默认是5000毫秒</li>
 </ul>
+<h3 id="1-4-3-总结"><a href="#1-4-3-总结" class="headerlink" title="1.4.3.总结"></a>1.4.3.总结</h3><p>1、服务降级：针对一次请求，看连接池是否已经满了，或者是否超时了，满足一个就降级</p>
+<p>2、服务熔断：在一定时间内多次降级，失败的比例达到50%以上，并达到20次以上，针对多次请求的，一个微服务，我访问了很多次都失败了，下次就不访问了，就直接触发熔断方法。<br>          5s内所有请求直接熔断，然后5s后进入半开状态，放部分请求通过，如果正常，就关闭熔断，如果不正常，又重新打开熔断</p>
 <h1 id="2-Feign"><a href="#2-Feign" class="headerlink" title="2.Feign"></a>2.Feign</h1><p>在前面的学习中，我们使用了Ribbon的负载均衡功能，大大简化了远程调用时的代码：</p>
 <pre class=" language-java"><code class="language-java">String user <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>restTemplate<span class="token punctuation">.</span><span class="token function">getForObject</span><span class="token punctuation">(</span><span class="token string">"http://service-provider/user/"</span> <span class="token operator">+</span> id<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
@@ -1894,7 +1896,7 @@ Hystrix也">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">36.8k</span>
+                        class="white-color">36.9k</span>
             
             
             
