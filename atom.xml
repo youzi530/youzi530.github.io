@@ -1,241 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>柚子小屋</title>
+  <title>{{ config.title }}</title>
   
-  <subtitle>求知若饥，虚心若愚</subtitle>
-  <link href="https://youzi530.github.io/atom.xml" rel="self"/>
+  <subtitle>{{ config.subtitle }}</subtitle>
+  <link href="{{ feed_url | uriencode }}" rel="self"/>
   
-  <link href="https://youzi530.github.io/"/>
-  <updated>2021-11-22T12:38:48.940Z</updated>
-  <id>https://youzi530.github.io/</id>
+  <link href="{{ url | uriencode }}"/>
+  <updated>{{ posts.first().updated.toISOString() }}</updated>
+  <id>{{ url | uriencode }}</id>
   
   <author>
-    <name>凌柚</name>
+    <name>{{ config.author }}</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>LEYOU04-商城业务和项目搭建</title>
-    <link href="https://youzi530.github.io/2021/11/22/leyou04-shang-cheng-ye-wu-he-xiang-mu-da-jian/"/>
-    <id>https://youzi530.github.io/2021/11/22/leyou04-shang-cheng-ye-wu-he-xiang-mu-da-jian/</id>
-    <published>2021-11-22T09:46:58.000Z</published>
-    <updated>2021-11-22T12:38:48.940Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
         
       
     
     
     
-    <category term="商城" scheme="https://youzi530.github.io/categories/%E5%95%86%E5%9F%8E/"/>
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
     
-    <category term="ES6" scheme="https://youzi530.github.io/categories/%E5%95%86%E5%9F%8E/ES6/"/>
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
     
     
-    <category term="电商项目" scheme="https://youzi530.github.io/tags/%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="技术选型" scheme="https://youzi530.github.io/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/"/>
-    
-    <category term="项目搭建" scheme="https://youzi530.github.io/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
-    
-    <category term="ES6" scheme="https://youzi530.github.io/tags/ES6/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
   </entry>
   
   <entry>
-    <title>LEYOU03-微服务其他组件</title>
-    <link href="https://youzi530.github.io/2021/11/18/leyou03-wei-fu-wu-qi-ta-zu-jian/"/>
-    <id>https://youzi530.github.io/2021/11/18/leyou03-wei-fu-wu-qi-ta-zu-jian/</id>
-    <published>2021-11-18T08:52:42.000Z</published>
-    <updated>2021-11-22T08:24:03.583Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
         
       
     
     
     
-    <category term="微服务" scheme="https://youzi530.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
+    
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
     
     
-    <category term="系统架构" scheme="https://youzi530.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="rpc" scheme="https://youzi530.github.io/tags/rpc/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="分布式服务" scheme="https://youzi530.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E6%9C%8D%E5%8A%A1/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="微服务" scheme="https://youzi530.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-    <category term="SpringCloud" scheme="https://youzi530.github.io/tags/SpringCloud/"/>
-    
-    <category term="Hystrix" scheme="https://youzi530.github.io/tags/Hystrix/"/>
-    
-    <category term="Feign" scheme="https://youzi530.github.io/tags/Feign/"/>
-    
-    <category term="Zuul网关" scheme="https://youzi530.github.io/tags/Zuul%E7%BD%91%E5%85%B3/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
   </entry>
   
   <entry>
-    <title>LEYOU02-认识微服务</title>
-    <link href="https://youzi530.github.io/2021/11/17/leyou02-ren-shi-wei-fu-wu/"/>
-    <id>https://youzi530.github.io/2021/11/17/leyou02-ren-shi-wei-fu-wu/</id>
-    <published>2021-11-17T03:12:13.000Z</published>
-    <updated>2021-11-23T03:34:08.640Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
         
       
     
     
     
-    <category term="微服务" scheme="https://youzi530.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
     
     
-    <category term="系统架构" scheme="https://youzi530.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="rpc" scheme="https://youzi530.github.io/tags/rpc/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="分布式服务" scheme="https://youzi530.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E6%9C%8D%E5%8A%A1/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="微服务" scheme="https://youzi530.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="SpringCloud" scheme="https://youzi530.github.io/tags/SpringCloud/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="Robbin" scheme="https://youzi530.github.io/tags/Robbin/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="Eureka" scheme="https://youzi530.github.io/tags/Eureka/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="HttpClient" scheme="https://youzi530.github.io/tags/HttpClient/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
   </entry>
   
   <entry>
-    <title>MacOS上用Docker运行MySQL</title>
-    <link href="https://youzi530.github.io/2021/11/16/macos-shang-yong-docker-yun-xing-mysql/"/>
-    <id>https://youzi530.github.io/2021/11/16/macos-shang-yong-docker-yun-xing-mysql/</id>
-    <published>2021-11-16T11:40:12.000Z</published>
-    <updated>2021-11-17T02:43:46.302Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
         
       
     
     
     
-    <category term="docker" scheme="https://youzi530.github.io/categories/docker/"/>
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
     
     
-    <category term="docker" scheme="https://youzi530.github.io/tags/docker/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="mysql" scheme="https://youzi530.github.io/tags/mysql/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
   </entry>
   
   <entry>
-    <title>LEYOU01-初步整合springboot</title>
-    <link href="https://youzi530.github.io/2021/11/16/springboot-xue-xi-bi-ji-1/"/>
-    <id>https://youzi530.github.io/2021/11/16/springboot-xue-xi-bi-ji-1/</id>
-    <published>2021-11-16T04:31:46.000Z</published>
-    <updated>2021-11-18T09:06:16.006Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
         
       
     
     
     
-    <category term="springboot" scheme="https://youzi530.github.io/categories/springboot/"/>
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
     
     
-    <category term="spring家族" scheme="https://youzi530.github.io/tags/spring%E5%AE%B6%E6%97%8F/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="springboot" scheme="https://youzi530.github.io/tags/springboot/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
   </entry>
   
   <entry>
-    <title>布隆过滤器</title>
-    <link href="https://youzi530.github.io/2021/11/04/bu-long-guo-lu-qi/"/>
-    <id>https://youzi530.github.io/2021/11/04/bu-long-guo-lu-qi/</id>
-    <published>2021-11-04T09:00:20.000Z</published>
-    <updated>2021-11-04T09:38:02.979Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
         
       
     
     
     
-    <category term="redis" scheme="https://youzi530.github.io/categories/redis/"/>
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
     
     
-    <category term="redis" scheme="https://youzi530.github.io/tags/redis/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="布隆过滤器" scheme="https://youzi530.github.io/tags/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
-    
-    <category term="数据库优化" scheme="https://youzi530.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
   </entry>
   
   <entry>
-    <title>秒杀系统设计</title>
-    <link href="https://youzi530.github.io/2021/11/04/miao-sha-xi-tong-she-ji/"/>
-    <id>https://youzi530.github.io/2021/11/04/miao-sha-xi-tong-she-ji/</id>
-    <published>2021-11-04T08:28:55.000Z</published>
-    <updated>2021-11-04T09:38:02.975Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
         
       
     
     
     
-    <category term="redis" scheme="https://youzi530.github.io/categories/redis/"/>
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
     
     
-    <category term="redis" scheme="https://youzi530.github.io/tags/redis/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="系统设计" scheme="https://youzi530.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
-    <category term="秒杀" scheme="https://youzi530.github.io/tags/%E7%A7%92%E6%9D%80/"/>
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    
+  </entry>
+  
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
+        
+      
+    
+    
+    
+    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
+    
+    
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    
+    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
     
   </entry>
   
